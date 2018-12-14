@@ -1,4 +1,4 @@
 #### The Project completed as part of 
 # Mobile Web Specialist Certification Course
 ---
-#### _Three Stage Course Material Project - Restaurant Reviews_   https://kuldyaev.github.io/
+#### _To view this project, checkout the demo at:_   https://kuldyaev.github.io/
