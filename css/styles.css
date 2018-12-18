@@ -53,15 +53,15 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   text-transform: uppercase;
 }
 /* ====================== Navigation ====================== */
-nav {
+#nav {
   background-color: #252831;
   text-align:center;
 }
-nav h1 {
+#nav h1 {
   margin: auto;
 	height: 100%;
 }
-nav h1 a {
+#nav h1 a {
 	height: 100%;
   color: #fff;
   font-size: 1em;
