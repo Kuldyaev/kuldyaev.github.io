@@ -321,3 +321,14 @@ body{width: 1280px;
   margin-right: auto;
   display: block;}
 }
+@media screen and (max-width: 1280px){
+	#reviews-list li {
+	    width: 50%;
+	}
+	#reviews-container h2 {
+	  font-size: 15pt;
+	}
+ p {
+	font-size: 8pt; 
+ }
+}
