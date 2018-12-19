@@ -5,32 +5,25 @@ class DBHelper {
    * Database URL.
    * Change this to restaurants.json file location on your server.
    */
-  static get DATABASE_URL() {
-    fetch(`https://kuldyaev.github.io/data/restaurants.json`)
-      .then(
-        function(response) {
-          if (response.status !== 200) {
-            return `https://kuldyaev.github.io/data/restaurants.json`;
-          }
-          else { const port = 8000 // Change this to your server port
-           return `http://localhost:${port}/data/restaurants.json`;
-            }
-        }
-      )
-      .catch(function(err) {
-        console.log('Fetch Error :-S', err);
-      });
-  }
+   static get DATABASE_URL() {
+     const port = 8000 // Change this to your server port
+     return `http://localhost:${port}/data/restaurants.json`;
+   }
 
   /** Fetch all restaurants.*/
   static fetchRestaurants(callback) {
     let xhr = new XMLHttpRequest();
     xhr.open('GET', DBHelper.DATABASE_URL);
+    let testxhr = new XMLHttpRequest();
+    testxhr.open('GET', `https://kuldyaev.github.io/data/restaurants.json`);
     xhr.onload = () => {
       if (xhr.status === 200) { // Got a success response from server!
         const json = JSON.parse(xhr.responseText);
         const restaurants = json.restaurants;
         callback(null, restaurants);
+      }
+      else if(testxhr.status === 200){
+        return `https://kuldyaev.github.io/data/restaurants.json`;
       }
       else { // Oops!. Got an error from server.
         const error = (`Request failed. Returned status of ${xhr.status}`);
