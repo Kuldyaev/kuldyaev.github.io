@@ -23,7 +23,9 @@ class DBHelper {
         callback(null, restaurants);
       }
       else if(testxhr.status === 200){
-        return `https://kuldyaev.github.io/data/restaurants.json`;
+        const json = JSON.parse(testxhr.responseText);
+        const restaurants = json.restaurants;
+        callback(null, restaurants);
       }
       else { // Oops!. Got an error from server.
         const error = (`Request failed. Returned status of ${xhr.status}`);
