@@ -10,7 +10,8 @@ class DBHelper {
     testxhr.open('GET', `https://kuldyaev.github.io/data/restaurants.json`);
     if (testxhr.status === 200){
      return `https://kuldyaev.github.io/data/restaurants.json`;}
-    else { const port = 8000 // Change this to your server port
+    else { console.log(testxhr.status);
+      const port = 8000 // Change this to your server port
      return `http://localhost:${port}/data/restaurants.json`;
       }
   }
