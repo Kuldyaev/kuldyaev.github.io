@@ -19,19 +19,10 @@ class DBHelper {
    }
 
   /** Fetch all restaurants.*/
-  static fetchRestaurants(callback) {
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', DBHelper.DATABASE_URL);
-    let testxhr = new XMLHttpRequest();
-    testxhr.open('GET', `https://kuldyaev.github.io/data/restaurants.json`);
     xhr.onload = () => {
-      if (xhr.status === 200) { // Got a success response from server!
+      if (xhr.status === 200) {
+        console.log(xhr.status); // Got a success response from server!
         const json = JSON.parse(xhr.responseText);
-        const restaurants = json.restaurants;
-        callback(null, restaurants);
-      }
-      else if(testxhr.status === 200){
-        const json = JSON.parse(testxhr.responseText);
         const restaurants = json.restaurants;
         callback(null, restaurants);
       }
