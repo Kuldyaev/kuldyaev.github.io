@@ -19,6 +19,9 @@ class DBHelper {
    }
 
   /** Fetch all restaurants.*/
+static fetchRestaurants(callback) {
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', DBHelper.DATABASE_URL);
     xhr.onload = () => {
       if (xhr.status === 200) {
         console.log(xhr.status); // Got a success response from server!
