@@ -10,12 +10,10 @@ class DBHelper {
        if (false !== currentLocation.indexOf('http://localhost:')) {
          const port = 8000 ;// Change this to your server port
          return `http://localhost:${port}/data/restaurants.json`;
-         console.log("Соединились"+`http://localhost:${port}/data/restaurants.json`);
          }
       else {
         return `https://kuldyaev.github.io/data/restaurants.json`;
-        console.log("Соединились"+`https://kuldyaev.github.io/data/restaurants.json`);
-     }
+        }
    }
 
   /** Fetch all restaurants.*/
