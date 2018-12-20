@@ -8,7 +8,7 @@ class DBHelper {
       static get DATABASE_URL() {
      const port = 8000 ;// Change this to your server port
      let currentLocation = window.location.href;
-       if (false !== currentLocation.indexOf('http://localhost:')) {
+       if (false === currentLocation.indexOf('localhost:')) {
          console.log("first"); 
          return `http://localhost:${port}/data/restaurants.json`;
          }
