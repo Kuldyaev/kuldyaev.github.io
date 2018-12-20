@@ -6,8 +6,25 @@ class DBHelper {
    * Change this to restaurants.json file location on your server.
    */
    static get DATABASE_URL() {
+     let nxhr = 1;
+     let sxhr = new XMLHttpRequest();
+     sxhr.open('GET', `http://localhost:8000/data/restaurants.json`);
+     sxhr.onload = () => {
+       if (sxhr.status === 200) {
+         nxhr = 1;
+         console.log("Статус"+ sxhr.status);
+         }
+      };
+    sxhr.send();
+    if (nxhr === 1){
      const port = 8000 // Change this to your server port
      return `http://localhost:${port}/data/restaurants.json`;
+     console.log("Соединились"+`http://localhost:${port}/data/restaurants.json`);
+   }
+   else {
+     return `https://kuldyaev.github.io/data/restaurants.json`;
+     console.log("Соединились"+`https://kuldyaev.github.io/data/restaurants.json`);
+     }
    }
 
   /** Fetch all restaurants.*/
