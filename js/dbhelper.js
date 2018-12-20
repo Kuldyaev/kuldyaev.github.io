@@ -5,17 +5,18 @@ class DBHelper {
    * Database URL.
    * Change this to restaurants.json file location on your server.
    */
-   static get DATABASE_URL() {
+      static get DATABASE_URL() {
      const port = 8000 ;// Change this to your server port
      let currentLocation = window.location.href;
        if (false !== currentLocation.indexOf('http://localhost:')) {
+         console.log("first"); 
          return `http://localhost:${port}/data/restaurants.json`;
          }
        else {
+        console.log("second");
         return `https://kuldyaev.github.io/data/restaurants.json`;
         }
    }
-
   /** Fetch all restaurants.*/
 static fetchRestaurants(callback) {
     let xhr = new XMLHttpRequest();
