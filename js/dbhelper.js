@@ -15,8 +15,7 @@ class DBHelper {
          console.log("Статус"+ sxhr.status);
          }
       };
-    sxhr.send();
-    if (nxhr === 1){
+   if (nxhr === 1){
      const port = 8000 // Change this to your server port
      return `http://localhost:${port}/data/restaurants.json`;
      console.log("Соединились"+`http://localhost:${port}/data/restaurants.json`);
