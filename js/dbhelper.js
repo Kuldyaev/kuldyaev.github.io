@@ -6,12 +6,12 @@ class DBHelper {
    * Change this to restaurants.json file location on your server.
    */
    static get DATABASE_URL() {
-     var currentLocation = window.location.href;
+     const port = 8000 ;// Change this to your server port
+     let currentLocation = window.location.href;
        if (false !== currentLocation.indexOf('http://localhost:')) {
-         const port = 8000 ;// Change this to your server port
          return `http://localhost:${port}/data/restaurants.json`;
          }
-      else {
+       else {
         return `https://kuldyaev.github.io/data/restaurants.json`;
         }
    }
