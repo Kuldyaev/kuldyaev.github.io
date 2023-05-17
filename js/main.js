@@ -76,21 +76,19 @@ initMap = () => {
         zoom: 12,
         scrollWheelZoom: false
       });
-   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: ''Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-    '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-    'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    tileSize: 512,
-    maxZoom: 18,
-    zoomOffset: -1,
-    id: 'mapbox/streets-v12',
-    accessToken: 'pk.eyJ1Ijoic2xhdmFsaW9uIiwiYSI6ImNqcGhlaWoxbDBpNGgzcm1zbXk3MnN3bzMifQ.khcOW6cfSK7n0FEO1eCRKQ'
-  }).addTo(map);
+  var layer = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      tileSize: 512,
+      maxZoom: 18,
+      zoomOffset: -1,
+      id: 'mapbox/streets-v12',
+      accessToken: 'pk.eyJ1Ijoic2xhdmFsaW9uIiwiYSI6ImNqcGhlaWoxbDBpNGgzcm1zbXk3MnN3bzMifQ.khcOW6cfSK7n0FEO1eCRKQ'
+    });
 
+    self.newMap.addLayer(layer);
+    
   updateRestaurants();
 }
-
-
 /**
  * Update page and map for current restaurants.
  */
